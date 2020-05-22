@@ -1,0 +1,185 @@
+/*
+Colors used
+background-color: #F5F5F5 (WhiteSmoke);
+Text Color (Dark Gray): #2b2b2b;
+Logo fill: #3D2B1F (brown);
+Logo fill: #222222 (almost black)
+Logo stroke: #FF8C00 (Dark-Orange);
+Buttons: #357b70
+Secondary Color #FFA500 (Orange);
+ */
+
+body {
+  /*background-color: #F5F5F5*/
+  font-family: 'Lato', sans-serif;
+  font-weight: '400';
+  font-size: 16px;
+  /* Sets the font size to 16px */
+  line-height: 1.6;
+  /* Sets the line-height to 1.6 */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.page-header {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+}
+
+.page-header__item {
+  flex: 0 1 200px;
+}
+
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.main-navigation__item--active {
+  color: green;
+}
+
+.navigation-list {
+  list-style-type: none;
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.profile__protrait {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+
+.page-content {
+  clear: both;
+  padding: 20px;
+}
+
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.grid__item {
+  background-color: lightgray;
+}
+
+.grid {
+  display: grid;                      /* fr instead of pixels make the 3-column-grid flexible*/
+  grid-template-columns: 1fr 1fr 1fr; /* adds a 3-Column grid for maximum divice-width*/
+  grid-gap: 20px;
+}
+
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr; /*change grid to 2-columns for devices between 500- and 751-width */
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+
+/* @media means "at devices" and comes at the end of all responsive classes to overwrite them */
+@media all and (max-width: 500px){
+
+  .grid {
+    /* display: grid; */
+    grid-template-columns: 1fr; /*change grid to 2-columns for devices smaller than 500-width */
+    grid-gap: 10px;
+  }
+
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+
+  h1 {
+  font-size: 30px;
+  font-weight: 700;
+  }
+
+} /* @media end: all in between is covered by it */
+
+h2 {
+font-size: 24px;
+font-weight: 700;
+}
+
+h3 {
+font-size: 18px;
+font-weight: 700;
+}
+
+a {
+/* unclicked state button color without underlining*/
+text-decoration: none;
+color: #357b70;
+}
+
+a:visited {
+/* visited link */
+color: #05676e;
+}
+
+a:hover, a:focus {
+/* when hovering over or tab-jump to a link */
+color: #489c79;
+}
+
+a:active {
+/* selected link */
+color: #489c79;
+}
+
+/*reset font family for buttons*/
+input, texture, select, button {
+font-family: system-ui;
+}
+
+button {
+/* overwrites browser defaults and resets the border */
+border: none;
+/* takes the font from the outer container */
+font-family: inherit;
+/* styles the background color, font color, and text decoration (underline, etc.) of the button */
+background-color: #357b70;
+color: white;
+text-decoration: none;
+/*adds spacing to the button (this will be discussed more in-depth later) */
+padding: 10px;
+border-radius: 3px;
+/* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+button:hover, button:focus {
+/* lets the mouse appear as a hand when hovering over the button */
+cursor: pointer;
+/* reduces the opacity of the button to 80% */
+opacity: 0.8;
+}
+
+.button__secondary {
+background-color: #e0b354;
+color: #2b2b2b;
+}
