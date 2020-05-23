@@ -74,13 +74,13 @@ a {
 		color: var(--primary-color-darker);
 	}
 	&:hover {
-		color: var(primary-color-lighter);
+		color: var(--primary-color-lighter);
 	}
 	&:focus {
-		color: var(primary-color-lighter);
+		color: var(--primary-color-lighter);
 	}
 	&:active {
-		color: var(primary-color-lighter);
+		color: var(--primary-color-lighter);
 	}
 }
 
