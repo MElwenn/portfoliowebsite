@@ -7,6 +7,7 @@
 
 :root {
 --primary-color: #333333; /* almost black */
+--fontColor: #FF9900;
 --primary-color-darker: #000000; /* black */
 --primary-color-lighter: #666666; /* almost black lighter */
 --secondary-color: #FF9900; /* Orange */
@@ -17,6 +18,7 @@ padding: 20px;
 
 body {
   background-color: var(--base-color);
+  font-color: var(--fontColor);
   font-family: 'Lato', sans-serif;
   font-weight: '400';
   font-size: 16px;
@@ -69,13 +71,13 @@ a {
 		color: var(--primary-color-darker);
 	}
 	&:hover {
-		color: var(--primary-color-lighter);
+		color: var(--fontColor);
 	}
 	&:focus {
-		color: var(--primary-color-lighter);
+		color: var(--fontColor);
 	}
 	&:active {
-		color: var(--primary-color-lighter);
+		color: var(--fontColor);
 	}
 }
 
@@ -263,13 +265,13 @@ font-family: system-ui;
 }
 
 %button-shared {
-	border: none;
+	border: 2px;
 	font-family: inherit;
-	background-color: #357b70;
+	background-color: #FF9900;
 	color: white;
 	text-decoration: none;
 	padding: 10px;
-	border-radius: 3px;
+	border-radius: 8px;
 	margin: 10px;
 	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 }
@@ -282,7 +284,7 @@ cursor: pointer;
 opacity: 0.8;
 }
 
-button {
+/* button {
 	&:focus {
 		color: var(primary-color-lighter);
 	}
@@ -300,7 +302,7 @@ button {
 	border: none;
 	display: inline-block;
 	font-family: inherit;
-	background-color: #357b70;
+	background-color: #FF9900;
 	color: white;
 	text-decoration: none;
 	margin: 10px;
@@ -308,25 +310,33 @@ button {
 	border-radius: 3px;
 	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
 	transition: 0.2s opacity;
-}
+} */
 
 .button {
-	border: none;
+	border: #FF9900 2px solid;
 	display: inline-block;
 	font-family: inherit;
-	background-color: #357b70;
+	background-color: #FF9900;
 	color: white;
 	text-decoration: none;
 	margin: 10px;
 	padding: 10px;
-	border-radius: 3px;
-	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+	border-radius: 8px;
+	border-bottom: none;
 	transition: 0.2s opacity;
 }
 
 .button__secondary {
-background-color: #e0b354;
-color: #2b2b2b;
+  border: #FF9900 2px solid;
+  /* border-width: 2px;
+  border-style: solid; */
+  background-color:rgba(255,255,255,0.2);
+  color: #FF9900;
+  text-decoration: none;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 8px;
+	transition: 0.2s opacity;
 }
 
 .page-footer {
