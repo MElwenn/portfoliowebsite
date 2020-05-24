@@ -6,11 +6,11 @@
 */
 
 :root {
---primary-color: #357b70;
---primary-color-darker: #2a6259;
---primary-color-lighter: #5d958c;
---secondary-color: #2B2B2B;
---base-color: #F5F5F5;
+--primary-color: #333333; /* almost black */
+--primary-color-darker: #000000; /* black */
+--primary-color-lighter: #666666; /* almost black lighter */
+--secondary-color: #FF9900; /* Orange */
+--base-color: #F5F5F5; /* White Smoke */
 width: 100%;
 padding: 20px;
 }
