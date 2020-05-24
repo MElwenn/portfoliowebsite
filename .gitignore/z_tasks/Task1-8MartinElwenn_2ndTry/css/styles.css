@@ -1,0 +1,324 @@
+/*
+Colors used
+background-color: #F5F5F5 (WhiteSmoke);
+Text Color (Dark Gray): #2b2b2b;
+Logo fill: #3D2B1F (brown);
+Logo fill: #222222 (almost black)
+Logo stroke: #FF8C00 (Dark-Orange);
+Buttons: #357b70
+Secondary Color #FFA500 (Orange);
+ */
+
+body {
+  background-color: #F5F5F5;
+  font-family: 'Lato', sans-serif;
+  font-weight: '400';
+  font-size: 16px;
+  /* Sets the font size to 16px */
+  line-height: 1.6;
+  /* Sets the line-height to 1.6 */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* attempt to use SCSS instead of CSS ruins my header! WHy?
+.page-header {
+	display: flex;
+	width: 100%;
+	padding: 20px;
+}
+.page-header__item {
+	flex: 0 1 200px;
+	&:last-child {
+		flex-grow: 1;
+		text-align: right;
+	}
+}
+.page-content {
+	display: flex;
+	width: 100%;
+	padding: 20px;
+} */
+
+/* use CSS instead (CSS=13 lines, SCSS 15 lines, apart from SCSS is nested, what's the advatage of using SCSS?) */
+.page-header {
+	display: flex;
+	width: 100%;
+	padding: 20px;
+}
+
+.page-header__item {
+	flex: 0 1 200px;
+}
+
+.page-header__item:last-child {
+	flex-grow: 1;
+	text-align: right;
+}
+
+.page-content {
+	display: flex;
+	width: 100%;
+	padding: 20px;
+}
+/* use CSS instead */
+
+/* SCSS ruins my header ...
+.navigation-list {
+	list-style-type: none;
+	li {
+		display: inline-block;
+		margin-left: 15px;
+		.navigation-list__item--active {
+			text-decoration: none;
+		}
+	}
+} */
+
+/* use CSS instead (CSS=8 lines, SCSS=10 lines, apart from SCSS is nested, what's the advatage of using SCSS?) */
+.navigation-list {
+  list-style-type: none;
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.navigation-list__item--active {
+  text-decoration: none;
+}
+
+a {
+/* unclicked state button color without underlining*/
+text-decoration: none;
+color: #357b70;
+}
+
+a:visited {
+/* visited link */
+color: #05676e;
+}
+
+a:hover, a:focus {
+/* when hovering over or tab-jump to a link */
+color: #489c79;
+}
+
+a:active {
+/* selected link */
+color: #489c79;
+}
+
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.profile__protrait {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.profile__protrait {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+
+.profile {
+	max-width: 700px;
+	margin: 0 auto;
+}
+.profile__protrait {
+	float: left;
+	width: 250px;
+	margin-right: 40px;
+	border-radius: 50%;
+}
+.page-content {
+	clear: both;
+	padding: 20px;
+}
+/* this is SCSS-nested and it works*/
+.page-content__item {
+	flex: 0 1 200px;
+	text-align: center;
+	margin: 10px;
+	&:last-child {
+		flex-grow: 1;
+		text-align: right;
+	}
+}
+.page-content__item-document {
+	max-width: 375px;
+	max-height: 667px;
+	text-align: center;
+	margin: 10px;
+}
+/* added in Task 1.7 .page content end */
+
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.grid__item {
+  background-color: lightgray;
+}
+
+
+.grid {
+  display: grid;                      /* fr instead of pixels make the 3-column-grid flexible*/
+  grid-template-columns: 1fr 1fr 1fr; /* adds a 3-Column grid for maximum divice-width*/
+  grid-gap: 10px;
+}
+
+@media all and (max-width:750px){ /* applying the 3-grid for all devices with a 750-width from 1st .grid statement*/
+  .grid__item:last-child {    /* shared code for all following @media statements */
+    grid-column: auto / auto; /* shared code for all following @media statements */
+    grid-row: auto / auto;    /* shared code for all following @media statements */
+  }                           /* shared code for all following @media statements */
+  h1 {                        /* shared code for all following @media statements */
+    font-size: 22px;          /* shared code for all following @media statements */
+  }                           /* shared code for all following @media statements */
+}
+
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr; /*change grid to 2-columns for devices between 500- and 750-width */
+  }
+}
+
+/* @media means "at devices" and comes at the end of all responsive classes to overwrite them */
+@media all and (max-width: 500px){
+  .grid {
+    grid-template-columns: 1fr; /*change grid to 2-columns for devices smaller than 500-width */
+  }
+} /* @media end: all in between is covered by it */
+
+/*ask shan */
+@keyframes color-change {
+
+  0% {
+    fill: #edc655;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #f76414;
+  }
+}
+
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(446px, 48px);
+  }
+  to {
+    transform: translate(100px, 48px);
+  }
+}
+
+.cloud-back {
+  animation: 34s cloud-move-reverse infinite alternate linear;
+}
+
+
+h2 {
+font-size: 24px;
+font-weight: 700;
+}
+
+h3 {
+font-size: 18px;
+font-weight: 700;
+}
+
+/* put links here */
+
+/*reset font family for buttons*/
+input, texture, select, button {
+font-family: system-ui;
+}
+
+%button-shared {
+/* overwrites browser defaults and resets the border */
+border: none;
+/* takes the font from the outer container */
+font-family: inherit;
+/* styles the background color, font color, and text decoration (underline, etc.) of the button */
+background-color: #357b70;
+color: white;
+text-decoration: none;
+/*adds spacing to the button (this will be discussed more in-depth later) */
+padding: 10px;
+border-radius: 3px;
+/*adds spacing to the button */
+margin: 10px;
+/* gives the button a bottom border with a width of 2px, a type of solid, and a color in RGBA format */
+border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+/* added at Task 1.5, obsolete? */
+button:hover, button:focus {
+/* lets the mouse appear as a hand when hovering over the button */
+cursor: pointer;
+/* reduces the opacity of the button to 80% */
+opacity: 0.8;
+}
+
+.button__secondary {
+  @extend %button-shared;
+  background-color: #e0b354;
+  color: #2b2b2b;
+}
+
+/* added at Task 1.7 */
+.button, button {
+  /* overwrites browser defaults */
+  /* resets the border */
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  /* style button */
+  background-color: #357b70;
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  /* width of the border, type, color */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: 0.2s opacity;
+}
