@@ -7,7 +7,7 @@
 
 :root {
 --primary-color: #333333; /* almost black */
---fontColor: #FF9900;
+--font-color: #333333;
 --primary-color-darker: #000000; /* black */
 --primary-color-lighter: #666666; /* almost black lighter */
 --secondary-color: #FF9900; /* Orange */
@@ -18,13 +18,11 @@ padding: 20px;
 
 body {
   background-color: var(--base-color);
-  font-color: var(--fontColor);
+  color: var(--font-color);
   font-family: 'Lato', sans-serif;
-  font-weight: '400';
-  font-size: 16px;
-  /* Sets the font size to 16px */
-  line-height: 1.6;
-  /* Sets the line-height to 1.6 */
+  font-weight: 400;
+  font-size: 16px; /* Sets the font size to 16px */
+  line-height: 1.6; /* Sets the line-height to 1.6 */
 }
 
 * {
@@ -71,25 +69,27 @@ a {
 		color: var(--primary-color-darker);
 	}
 	&:hover {
-		color: var(--fontColor);
+		color: var(--secondary-color);
 	}
 	&:focus {
-		color: var(--fontColor);
+		color: var(--secondary-color);
 	}
 	&:active {
-		color: var(--fontColor);
+		color: var(--secondary-color);
 	}
 }
 
 .profile {
 	max-width: 700px;
 	margin: 0 auto;
+  padding: 20px;
 }
 
-.profile__protrait {
+.profile__portrait {
 	float: left;
-	width: 250px;
+	width: 200px;
 	margin-right: 40px;
+  padding: 35px;
 	border-radius: 50%;
 }
 
@@ -147,6 +147,27 @@ a {
 	h1 {
 		font-size: 22px;
 	}
+  /* This code block is irgnored by the browser
+  %button-shared {
+  	border: 2px;
+  	font-family: inherit;
+  	background-color: #FF9900;
+  	color: white;
+  	text-decoration: none;
+  	padding: 10px;
+  	border-radius: 8px;
+  	margin: 10px;
+  	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  }
+  */
+
+  /* added at Task 1.5, obsolete? */
+  button:hover, button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+  }
 }
 
 @media all and (min-width: 500px) and (max-width: 750px) {
@@ -264,71 +285,49 @@ h3 {
 input, texture, select, button {
 font-family: system-ui;
 }
-
-/* This code block is irgnored by the browser
-%button-shared {
-	border: 2px;
-	font-family: inherit;
-	background-color: #FF9900;
-	color: white;
-	text-decoration: none;
-	padding: 10px;
-	border-radius: 8px;
-	margin: 10px;
-	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-}
-*/
-
-/* added at Task 1.5, obsolete? */
-button:hover, button:focus {
-/* lets the mouse appear as a hand when hovering over the button */
-cursor: pointer;
-/* reduces the opacity of the button to 80% */
-opacity: 0.8;
-}
-
 /*  This code block is irgnored by the browser
 button {
-	&:focus {
-		color: var(primary-color-lighter);
-	}
-	&:active {
-		color: var(primary-color-lighter);
-	}
+  &:focus {
+    color: var(primary-color-lighter);
+  }
+  &:active {
+    color: var(primary-color-lighter);
+  }
   &:hover {
-		cursor: pointer;
-		opacity: 0.8;
-	}
-	&:focus {
-		cursor: pointer;
-		opacity: 0.8;
-	}
-	border: none;
-	display: inline-block;
-	font-family: inherit;
-	background-color: #FF9900;
-	color: white;
-	text-decoration: none;
-	margin: 10px;
-	padding: 10px;
-	border-radius: 3px;
-	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-	transition: 0.2s opacity;
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  &:focus {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  background-color: #FF9900;
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: 0.2s opacity;
 } */
 
 .button {
-	border: #FF9900 1px solid;
+  border: #FF9900 1px solid;
   @include buttons();
-	display: inline-block;
-	font-family: inherit;
-	background-color: #FF9900;
-	color: white;
-	text-decoration: none;
-	margin: 10px;
-	padding: 10px;
-	border-radius: 8px;
-	border-bottom: none;
-	transition: 0.2s opacity;
+  display: inline-block;
+  font-family: inherit;
+  background-color: #FF9900;
+  color: white;
+  text-decoration: none;
+  align: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border-bottom: none;
+  transition: 0.2s opacity;
 }
 
 .button__secondary {
@@ -337,10 +336,10 @@ button {
   background-color:rgba(255,255,255,0.2);
   color: #FF9900;
   text-decoration: none;
-	margin: 10px;
-	padding: 10px;
-	border-radius: 8px;
-	transition: 0.2s opacity;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.2s opacity;
 }
 
 .page-footer {
