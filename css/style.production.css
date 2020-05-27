@@ -4,67 +4,61 @@
 * Autoprefixer: v9.7.6
 * Browsers: last 4 version
 */
-
 :root {
---primary-color: #357b70;
---primary-color-darker: #2a6259;
---primary-color-lighter: #5d958c;
---secondary-color: #2B2B2B;
---base-color: #F5F5F5;
-width: 100%;
-padding: 20px;
+  --primary-color: #333333;
+  --font-color: #333333;
+  --primary-color-darker: #000000;
+  --primary-color-lighter: #666666;
+  --secondary-color: #FF9900;
+  --base-color: #F5F5F5;
+  width: 100%;
+  padding: 20px;
 }
 
 body {
   background-color: var(--base-color);
+  color: var(--font-color);
   font-family: 'Lato', sans-serif;
-  font-weight: '400';
-  font-size: 16px;
-  /* Sets the font size to 16px */
-  line-height: 1.6;
-  /* Sets the line-height to 1.6 */
+  font-weight: 400;
+  font-size: 16px; /* Sets the font size to 16px */
+  line-height: 1.6; /* Sets the line-height to 1.6 */
 }
 
 * {
-  box-sizing: border-box;
-}
-
-@mixin pageheader() {
-  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .page-header {
-  @include pageheader();
+  display: flex;
 }
 
 .page-header__item {
-  @include pageheader();
 	flex: 0 1 200px;
 }
 
 .page-header__item:last-child {
-  @include pageheader();
 	flex-grow: 1;
 	text-align: right;
 }
 
-@mixin mainnavigation() {
-  list-style-type: none;
-  text-decoration: none;
+.page-content {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
 }
 
 .navigation-list {
-  @include mainnavigation();
+  list-style-type: none;
 }
 
 .navigation-list li {
-  @include mainnavigation();
   display: inline-block;
   margin-left: 15px;
 }
 
 .navigation-list__item--active {
-  @include mainnavigation();
+  text-decoration: none;
 }
 
 a {
@@ -74,25 +68,27 @@ a {
 		color: var(--primary-color-darker);
 	}
 	&:hover {
-		color: var(--primary-color-lighter);
+		color: var(--secondary-color);
 	}
 	&:focus {
-		color: var(--primary-color-lighter);
+		color: var(--secondary-color);
 	}
 	&:active {
-		color: var(--primary-color-lighter);
+		color: var(--secondary-color);
 	}
 }
 
 .profile {
 	max-width: 700px;
 	margin: 0 auto;
+  padding: 20px;
 }
 
-.profile__protrait {
+.profile__portrait {
 	float: left;
-	width: 250px;
+	width: 200px;
 	margin-right: 40px;
+  padding: 35px;
 	border-radius: 50%;
 }
 
@@ -116,9 +112,14 @@ a {
 	        flex: 0 1 200px;
 	margin: 10px;
 	&:last-child { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1;
-	text-align: right;
+	text-align: center;
   }
 }
+
+/* .page-content__item-button {
+  @include pagecontent();
+  text-align: center;
+} */
 
 .page-content__item-document {
   @include pagecontent();
@@ -127,8 +128,10 @@ a {
 	margin: 10px;
 }
 
+/* Responsive three row grid */
 .grid__item {
 	background-color: lightgray;
+  padding: 10px;
 }
 
 .grid {
@@ -149,6 +152,27 @@ a {
 	h1 {
 		font-size: 22px;
 	}
+  /* This code block is irgnored by the browser
+  %button-shared {
+  	border: 2px;
+  	font-family: inherit;
+  	background-color: #FF9900;
+  	color: white;
+  	text-decoration: none;
+  	padding: 10px;
+  	border-radius: 8px;
+  	margin: 10px;
+  	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  }
+  */
+
+  /* added at Task 1.5, obsolete? */
+  button:hover, button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+  }
 }
 
 @media all and (min-width: 500px) and (max-width: 750px) {
@@ -265,71 +289,67 @@ h3 {
 /*reset font family for buttons*/
 input, texture, select, button {
 font-family: system-ui;
+text-align: center;
 }
-
-%button-shared {
-	border: none;
-	font-family: inherit;
-	background-color: #357b70;
-	color: white;
-	text-decoration: none;
-	padding: 10px;
-	border-radius: 3px;
-	margin: 10px;
-	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-}
-
-/* added at Task 1.5, obsolete? */
-button:hover, button:focus {
-/* lets the mouse appear as a hand when hovering over the button */
-cursor: pointer;
-/* reduces the opacity of the button to 80% */
-opacity: 0.8;
-}
-
+/*  This code block is irgnored by the browser
 button {
-	&:focus {
-		color: var(primary-color-lighter);
-	}
-	&:active {
-		color: var(primary-color-lighter);
-	}
+  &:focus {
+    color: var(primary-color-lighter);
+  }
+  &:active {
+    color: var(primary-color-lighter);
+  }
   &:hover {
-		cursor: pointer;
-		opacity: 0.8;
-	}
-	&:focus {
-		cursor: pointer;
-		opacity: 0.8;
-	}
-	border: none;
-	display: inline-block;
-	font-family: inherit;
-	background-color: #357b70;
-	color: white;
-	text-decoration: none;
-	margin: 10px;
-	padding: 10px;
-	border-radius: 3px;
-	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-	transition: 0.2s opacity;
-}
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  &:focus {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  background-color: #FF9900;
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: 0.2s opacity;
+} */
 
 .button {
-	border: none;
-	display: inline-block;
-	font-family: inherit;
-	background-color: #357b70;
-	color: white;
-	text-decoration: none;
-	margin: 10px;
-	padding: 10px;
-	border-radius: 3px;
-	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-	transition: 0.2s opacity;
+  border: #FF9900 1px solid;
+  @include buttons();
+  font-family: inherit;
+  background-color: #FF9900;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border-bottom: none;
+  transition: 0.2s opacity;
 }
 
 .button__secondary {
-background-color: #e0b354;
-color: #2b2b2b;
+  border: #FF9900 1px solid;
+  @include buttons();
+  background-color:rgba(255,255,255,0.2);
+  color: #FF9900;
+  text-decoration: none;
+  /* margin: 10px; */
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.2s opacity;
+}
+
+.page-footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
