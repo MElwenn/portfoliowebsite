@@ -4,16 +4,15 @@
 * Autoprefixer: v9.7.6
 * Browsers: last 4 version
 */
-
 :root {
---primary-color: #333333; /* almost black */
---font-color: #333333;
---primary-color-darker: #000000; /* black */
---primary-color-lighter: #666666; /* almost black lighter */
---secondary-color: #FF9900; /* Orange */
---base-color: #F5F5F5; /* White Smoke */
-width: 100%;
-padding: 20px;
+  --primary-color: #333333;
+  --font-color: #333333;
+  --primary-color-darker: #000000;
+  --primary-color-lighter: #666666;
+  --secondary-color: #FF9900;
+  --base-color: #F5F5F5;
+  width: 100%;
+  padding: 20px;
 }
 
 body {
@@ -127,7 +126,6 @@ a {
   max-width: 375px;
 	max-height: 667px;
 	margin: 10px;
-  align: center;
 }
 
 /* Responsive three row grid */
@@ -330,7 +328,6 @@ button {
   background-color: #FF9900;
   color: white;
   text-decoration: none;
-  align: center;
   text-align: center;
   margin: 10px;
   padding: 10px;
