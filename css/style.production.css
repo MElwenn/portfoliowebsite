@@ -323,7 +323,6 @@ button {
 .button {
   border: #FF9900 1px solid;
   @include buttons();
-  display: inline-block;
   font-family: inherit;
   background-color: #FF9900;
   color: white;
