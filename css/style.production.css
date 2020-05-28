@@ -105,6 +105,14 @@ a {
 	padding: 20px;
 }
 
+.page-content-centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  max-width: 200px;
+}
+
 .page-content__item {
   @include pagecontent();
 	-webkit-box-flex: 0;
