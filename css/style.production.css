@@ -130,28 +130,39 @@ a {
 
 /* Responsive three row grid */
 .grid__item {
-	background-color: lightgray;
-  padding: 10px;
+  background-color: lightgray;
 }
+
 
 .grid {
-	display: -ms-grid;
-	display: grid;
-	-ms-grid-columns: 1fr 10px 1fr 10px 1fr;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-gap: 10px;
+  display: grid;                      /* fr instead of pixels make the 3-column-grid flexible*/
+  grid-template-columns: 1fr 1fr 1fr; /* adds a 3-Column grid for maximum divice-width*/
+  grid-gap: 10px;
 }
 
-@media all and (max-width:750px) {
-	.grid__item {
-		&:last-child {
-			grid-column: auto / auto;
-			grid-row: auto / auto;
-		}
-	}
-	h1 {
-		font-size: 22px;
-	}
+@media all and (max-width:750px){ /* applying the 3-grid for all devices with a 750-width from 1st .grid statement*/
+  .grid__item:last-child {    /* shared code for all following @media statements */
+    grid-column: auto / auto; /* shared code for all following @media statements */
+    grid-row: auto / auto;    /* shared code for all following @media statements */
+  }                           /* shared code for all following @media statements */
+  h1 {                        /* shared code for all following @media statements */
+    font-size: 22px;          /* shared code for all following @media statements */
+  }                           /* shared code for all following @media statements */
+}
+
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr; /*change grid to 2-columns for devices between 500- and 750-width */
+  }
+}
+
+/* @media means "at devices" and comes at the end of all responsive classes to overwrite them */
+@media all and (max-width: 500px){
+  .grid {
+    grid-template-columns: 1fr; /*change grid to 2-columns for devices smaller than 500-width */
+  }
+} /* @media end: all in between is covered by it */
+
   /* This code block is irgnored by the browser
   %button-shared {
   	border: 2px;
