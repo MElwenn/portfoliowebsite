@@ -131,6 +131,7 @@ a {
 /* Responsive three row grid */
 .grid__item {
   background-color: lightgray;
+  padding: 10px;
 }
 
 
