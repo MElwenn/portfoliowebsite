@@ -55,26 +55,23 @@
 			</div>
     </div>
 
-			<!--This is the contact form-->
-			<div class="page-content">
-				<form action="Input" method="post" id="contact-form">
+	<!--This is the contact form-->
+		<div class="container">
+      <form>
 
-					<label class="standard-label" for="email">
-            E mail:  <input type="text" id="email" name="email" required>
-					</label>
-        <br>
-					<label class="standard-label" for="phone">
-				    Phone:  <input type="tel" id="phone">
-					</label>
-        <br>
-				  <label class="standard-label" for="message">Message:
-				    <textarea required maxlength="240" id="message">max. 240 characters</textarea>
-          </label>
-        <br>
-					<!--<input type="submit" value="Send message">-->
-					<button class="button">Send message</button>
-				</form>
-			</div>
+		    <label for="firstname">First Name</label>
+		    <input type="text" id="firstname" name="firstname" placeholder="Your first name...">
+
+		    <label for="lastname">Last Name</label>
+		    <input type="text" id="lastname" name="lastname" placeholder="Your last name...">
+
+		    <label for="message">Subject</label>
+		    <textarea required maxlength="240" id="message" name="message" placeholder="Write something.." style="height:200px">max. 240 characters</textarea>
+
+    		<button class="button">Send message</button>
+
+		  </form>
+		</div>
 
 			<!--This is the footer section-->
 			<footer class="page-footer">
