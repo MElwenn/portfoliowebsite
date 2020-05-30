@@ -169,6 +169,16 @@ input[type=text], select, textarea {
   margin-bottom: 16px;
   resize: vertical; /* textarea resizes vertically depending on amount of text */
 }
+
+/* styling submit button contact form */
+button {
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+}
 /* contact form end */
 
 /* background color and padding around the form */
@@ -213,6 +223,29 @@ input[type=text], select, textarea {
   }
 }
 /* Responsive three row grid end */
+
+/* This code block is irgnored by the browser and partly not W3C-valid, though require by CF-Tutorial
+  %button-shared {
+  	border: 2px;
+  	font-family: inherit;
+  	background-color: #FF9900;
+  	color: white;
+  	text-decoration: none;
+  	padding: 10px;
+  	border-radius: 8px;
+  	margin: 10px;
+  	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  }
+  */
+
+  /* added at Task 1.5, obsolete? */
+  button:hover, button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+  }
+}
 
 /* used for the berlin.svg that can be removed after achievement one */
 @-webkit-keyframes "color-change" {
@@ -318,32 +351,6 @@ input, texture, select, button {
 font-family: system-ui;
 text-align: center;
 }
-
-/* Buttons used */
-
-/* This code block is irgnored by the browser and partly not W3C-valid, though require by CF-Tutorial
-  %button-shared {
-  	border: 2px;
-  	font-family: inherit;
-  	background-color: #FF9900;
-  	color: white;
-  	text-decoration: none;
-  	padding: 10px;
-  	border-radius: 8px;
-  	margin: 10px;
-  	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  }
-  */
-
-  /* added at Task 1.5, obsolete? */
-  button:hover, button:focus {
-  /* lets the mouse appear as a hand when hovering over the button */
-  cursor: pointer;
-  /* reduces the opacity of the button to 80% */
-  opacity: 0.8;
-  }
-}
-
 /* This code block is irgnored by the browser and partly not W3C-valid though reguired by CF-tutorial
 button {
   &:focus {
@@ -385,7 +392,6 @@ button {
   margin: 10px;
   padding: 10px;
   border-radius: 8px;
-  cursor: pointer;
   border-bottom: none;
   transition: 0.2s opacity;
 }
@@ -399,21 +405,9 @@ button {
   /* margin: 10px; */
   padding: 10px;
   border-radius: 8px;
-  cursor: pointer;
   transition: 0.2s opacity;
 }
 /* general button styling end */
-
-/* styling submit button contact form */
-button {
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-align: center;
-}
-/* submit button end */
 
 /* used for main footer section */
 .page-footer {
