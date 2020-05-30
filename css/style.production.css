@@ -380,6 +380,24 @@ button {
   transition: 0.2s opacity;
 } */
 
+/* flex-container used for the two buttons on index.html */
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #F5F5F5;
+}
+
+.flex-container > div {
+  background-color: #F5F5F5;
+  width: 300px;
+  margin: 10px;
+  text-align: center;
+  line-height: 50px;
+}
+
+/* flex-box end */
+
 /* general button styling */
 .button {
   border: #FF9900 1px solid;
@@ -392,6 +410,7 @@ button {
   margin: 10px;
   padding: 10px;
   border-radius: 8px;
+  cursor: pointer;
   border-bottom: none;
   transition: 0.2s opacity;
 }
@@ -405,6 +424,7 @@ button {
   /* margin: 10px; */
   padding: 10px;
   border-radius: 8px;
+  cursor: pointer;
   transition: 0.2s opacity;
 }
 /* general button styling end */
