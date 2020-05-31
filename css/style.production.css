@@ -114,6 +114,16 @@ a {
 }
 /* general page content end */
 
+/* used for the scrollabel document section on skills.html */
+.page-content__item-document {
+  display: flex;
+  text-align: center;
+  max-width: 375px;
+	max-height: 667px;
+	margin: 10px;
+}
+/* scrollabel document section end */
+
 /* centered content class used for the project including click-dummy an button on skills.html */
 .page-content-centered {
   display: block;
@@ -148,15 +158,6 @@ th, td {
 	text-align: center;
   }
 }
-
-/* used for the scrollabel document section on skills.html */
-.page-content__item-document {
-  @include pagecontent();
-  max-width: 375px;
-	max-height: 667px;
-	margin: 10px;
-}
-/* scrollabel document section end */
 
 /* used for contact form on contact.html */
 input[type=text], select, textarea {
