@@ -178,6 +178,7 @@ button {
   border-radius: 8px;
   cursor: pointer;
   text-align: center;
+  white-space: nowrap; /* aviod the button to line break */
 }
 /* contact form end */
 
@@ -238,14 +239,6 @@ button {
   }
   */
 
-  /* added at Task 1.5, obsolete? */
-  button:hover, button:focus {
-  /* lets the mouse appear as a hand when hovering over the button */
-  cursor: pointer;
-  /* reduces the opacity of the button to 80% */
-  opacity: 0.8;
-  }
-}
 
 /* used for the berlin.svg that can be removed after achievement one */
 @-webkit-keyframes "color-change" {
@@ -350,6 +343,7 @@ h3 {
 input, texture, select, button {
 font-family: system-ui;
 text-align: center;
+white-space: nowrap; /* aviod the button to line break */
 }
 /* This code block is irgnored by the browser and partly not W3C-valid though reguired by CF-tutorial
 button {
@@ -399,32 +393,49 @@ button {
 /* flex-box end */
 
 /* general button styling */
+
+/* added at Task 1.5, obsolete? */
+button:hover, button:focus {
+/* lets the mouse appear as a hand when hovering over the button */
+cursor: pointer;
+/* reduces the opacity of the button to 80% */
+opacity: 0.8;
+white-space: nowrap; /* aviod the button to line break */
+}
+
 .button {
   border: #FF9900 1px solid;
-  @include buttons();
   font-family: inherit;
+  font-size: adjust;
   background-color: #FF9900;
   color: white;
   text-decoration: none;
   text-align: center;
-  margin: 10px;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
   border-bottom: none;
+  transition: 0.2s opacity;
+  white-space: nowrap; /* aviod the button to line break */
+}
+
+.button:hover {
   transition: 0.2s opacity;
 }
 
 .button__secondary {
   border: #FF9900 1px solid;
-  @include buttons();
   background-color:rgba(255,255,255,0.2);
   color: #FF9900;
   text-decoration: none;
-  /* margin: 10px; */
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
+  transition: 0.2s opacity;
+  white-space: nowrap; /* aviod the button to line break */
+}
+
+.button__secondary:hover {
   transition: 0.2s opacity;
 }
 /* general button styling end */
