@@ -1,10 +1,10 @@
+
 /*
 * Prefixed by https://autoprefixer.github.io
 * PostCSS: v7.0.29,
 * Autoprefixer: v9.7.6
 * Browsers: last 4 version
 */
-
 /* global color settings */
 :root {
   --primary-color: #333333;
@@ -16,7 +16,6 @@
   width: 100%;
   padding: 20px;
 }
-
 /* global body settings */
 body {
   background-color: var(--base-color);
@@ -26,77 +25,61 @@ body {
   font-size: 16px; /* Sets the font size to 16px */
   line-height: 1.6; /* Sets the line-height to 1.6 */
 }
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-
 /* used for main header section */
 .page-header {
   display: flex;
 }
-
 .page-header__item {
 	flex: 0 1 200px;
 }
-
 .page-header__item:last-child {
 	flex-grow: 1;
 	text-align: right;
 }
 /* main header section end */
-
 /* used for main navigation section within header */
 .navigation-list {
   list-style-type: none;
 }
-
 .navigation-list li {
   display: inline-block;
   margin-left: 15px;
 }
-
 .navigation-list__item--active {
   text-decoration: none;
 }
-
 a {
   text-decoration: none;
 	color: var(--primary-color);
 }
-
-a:visited {
-	color: var(--primary-color-darker);
-}
-
-a:hover {
-	color: var(--secondary-color);
-}
-
-a:focus {
-	color: var(--secondary-color);
-}
-
 a:active {
-	color: var(--secondary-color);
+  color: var(--secondary-color);
 }
-
+a:visited {
+  color: var(--primary-color-darker);
+}
+a:hover {
+  color: var(--secondary-color);
+}
+a:focus {
+  color: var(--secondary-color);
+}
 /* main navigation section within header end */
-
 /* used for general page content */
 .page-content {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 }
-
 .profile {
 	max-width: 700px;
 	margin: 0 auto;
   padding: 20px;
 }
-
 .profile__portrait {
 	float: left;
 	width: 200px;
@@ -104,12 +87,10 @@ a:active {
   padding: 35px;
 	border-radius: 50%;
 }
-
 @mixin pagecontent() {
   display: flex;
   text-align: center;
 }
-
 .page-content {
   @include pagecontent();
 	display: -webkit-box;
@@ -118,7 +99,6 @@ a:active {
 	padding: 20px;
 }
 /* general page content end */
-
 /* used for the scrollabel document section on skills.html */
 .page-content__item-document {
   display: flex;
@@ -128,7 +108,6 @@ a:active {
 	margin: 10px;
 }
 /* scrollabel document section end */
-
 /* centered content class used for the project including click-dummy an button on skills.html */
 .page-content-centered {
   display: block;
@@ -138,7 +117,6 @@ a:active {
   max-width: 200px;
 }
 /* centered content class end */
-
 /* Used for the skill tabel on skills.html */
 .content-table {
   border-collapse: collapse;
@@ -146,13 +124,11 @@ a:active {
   width: 100%;
   border: 1px solid #CCCCCC;
 }
-
 th, td {
   text-align: left;
   padding: 10px;
 }
 /* skill tabel end */
-
 .page-content__item {
   @include pagecontent();
 	-webkit-box-flex: 0;
@@ -160,14 +136,12 @@ th, td {
 	        flex: 0 1 200px;
 	margin: 10px;
 }
-
 .page-content__item:last-child {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
 	text-align: center;
 }
-
 /* used for contact form on contact.html */
 input[type=text], select, textarea {
   width: 100%; /* Full width */
@@ -179,177 +153,6 @@ input[type=text], select, textarea {
   margin-bottom: 16px;
   resize: vertical; /* textarea resizes vertically depending on amount of text */
 }
-
-/* background color and padding around the form */
-.container {
-  border-radius: 5px;
-  background-color: #F5F5F5;
-  padding: 20px;
-}
-
-/* Responsive three row grid */
-.grid__item {
-  background-color: lightgray;
-  padding: 10px;
-}
-
-.grid {
-  display: grid;                      /* fr instead of pixels make the 3-column-grid flexible*/
-  grid-template-columns: 1fr 1fr 1fr; /* adds a 3-Column grid for maximum divice-width*/
-  grid-gap: 10px;
-}
-
-@media all and (max-width:750px){ /* applying the 3-grid for all devices with a 750-width from 1st .grid statement*/
-  .grid__item:last-child {    /* shared code for all following @media statements */
-    grid-column: auto / auto; /* shared code for all following @media statements */
-    grid-row: auto / auto;    /* shared code for all following @media statements */
-  }                           /* shared code for all following @media statements */
-  h1 {                        /* shared code for all following @media statements */
-    font-size: 22px;          /* shared code for all following @media statements */
-  }                           /* shared code for all following @media statements */
-}
-
-@media all and (min-width: 500px) and (max-width: 750px){
-  .grid {
-    grid-template-columns: 1fr 1fr; /*change grid to 2-columns for devices between 500- and 750-width */
-  }
-}
-
-/* @media means "at devices" and comes at the end of all responsive classes to overwrite them */
-@media all and (max-width: 500px){
-  .grid {
-    grid-template-columns: 1fr; /*change grid to 2-columns for devices smaller than 500-width */
-  }
-}
-/* Responsive three row grid end */
-
-/* used for the berlin.svg that can be removed after achievement one */
-@-webkit-keyframes "color-change" {
-	0% {
-		fill: #edc655;
-	}
-	50% {
-		fill: #fcffad;
-	}
-	100% {
-		fill: #f76414;
-	}
-}
-
-@-webkit-keyframes cloud-move {
-	from {
-		-webkit-transform: translate(0, 50px);
-		        transform: translate(0, 50px);
-	}
-	to {
-		-webkit-transform: translate(200px, 50px);
-		        transform: translate(200px, 50px);
-	} /* Codebeautyfy.org sais "No Error Found,Its Perfect CSS Code" */
-}
-
-@keyframes cloud-move {
-	from {
-		-webkit-transform: translate(0, 50px);
-		        transform: translate(0, 50px);
-	}
-	to {
-		-webkit-transform: translate(200px, 50px);
-		        transform: translate(200px, 50px);
-	}
-}
-
-@-webkit-keyframes cloud-move-reverse {
-	from {
-		-webkit-transform: translate(446px, 48px);
-		        transform: translate(446px, 48px);
-	}
-	to {
-		-webkit-transform: translate(100px, 48px);
-		        transform: translate(100px, 48px);
-	} /* Codebeautyfy.org sais "No Error Found,Its Perfect CSS Code" */
-}
-
-@keyframes cloud-move-reverse {
-	from {
-		-webkit-transform: translate(446px, 48px);
-		        transform: translate(446px, 48px);
-	}
-	to {
-		-webkit-transform: translate(100px, 48px);
-		        transform: translate(100px, 48px);
-	}
-}
-
-.sun {
-	-webkit-animation: 4s color-change infinite alternate linear;
-	        animation: 4s color-change infinite alternate linear;
-}
-
-.cloud-front {
-	-webkit-animation: 30s cloud-move infinite alternate linear;
-	        animation: 30s cloud-move infinite alternate linear;
-} /* Codebeautyfy.org sais "No Error Found,Its Perfect CSS Code" */
-
-.cloud-back {
-	-webkit-animation: 34s cloud-move-reverse infinite alternate linear;
-	        animation: 34s cloud-move-reverse infinite alternate linear;
-}
-/* berlin.svg that can be removed end */
-
-@mixin subtitles() {
-  font-weight: 700;
-}
-
-h2 {
-  @include subtitles();
-  font-size: 20px;
-}
-
-h3 {
-  @include subtitles();
-  font-size: 18px;
-}
-
-/*reset font family for buttons*/
-input, texture, select, button {
-font-family: system-ui;
-text-align: center;
-white-space: nowrap; /* aviod the button to line break */
-}
-/*
-border: none;
-display: inline-block;
-font-family: inherit;
-background-color: #FF9900;
-color: white;
-text-decoration: none;
-margin: 10px;
-padding: 10px;
-border-radius: 3px;
-border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-transition: 0.2s opacity;
-*/
-
-/* flex-container used for the two buttons on index.html */
-
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #F5F5F5;
-}
-
-.flex-container > div {
-  background-color: #F5F5F5;
-  width: 300px;
-  margin: 10px;
-  text-align: center;
-  line-height: 50px;
-}
-
-/* flex-box end */
-
-/* general button styling */
-
 /* styling submit button contact form */
 button {
   color: white;
@@ -361,8 +164,43 @@ button {
   white-space: nowrap; /* aviod the button to line break */
 }
 /* contact form end */
-
-
+/* background color and padding around the form */
+.container {
+  border-radius: 5px;
+  background-color: #F5F5F5;
+  padding: 20px;
+}
+/* Responsive three row grid */
+.grid__item {
+  background-color: lightgray;
+  padding: 10px;
+}
+.grid {
+  display: grid;                      /* fr instead of pixels make the 3-column-grid flexible*/
+  grid-template-columns: 1fr 1fr 1fr; /* adds a 3-Column grid for maximum divice-width*/
+  grid-gap: 10px;
+}
+@media all and (max-width:750px){ /* applying the 3-grid for all devices with a 750-width from 1st .grid statement*/
+  .grid__item:last-child {    /* shared code for all following @media statements */
+    grid-column: auto / auto; /* shared code for all following @media statements */
+    grid-row: auto / auto;    /* shared code for all following @media statements */
+  }                           /* shared code for all following @media statements */
+  h1 {                        /* shared code for all following @media statements */
+    font-size: 22px;          /* shared code for all following @media statements */
+  }                           /* shared code for all following @media statements */
+}
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr; /*change grid to 2-columns for devices between 500- and 750-width */
+  }
+}
+/* @media means "at devices" and comes at the end of all responsive classes to overwrite them */
+@media all and (max-width: 500px){
+  .grid {
+    grid-template-columns: 1fr; /*change grid to 2-columns for devices smaller than 500-width */
+  }
+}
+/* Responsive three row grid end */
 /* This code block is irgnored by the browser and partly not W3C-valid, though require by CF-Tutorial
   %button-shared {
   	border: 2px;
@@ -376,36 +214,150 @@ button {
   	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   }
   */
-
-/* This code block is irgnored by the browser and partly not W3C-valid though reguired by CF-tutorial */
-button {
+/* used for the berlin.svg that can be removed after achievement one */
+@-webkit-keyframes color-change {
+	0% {
+		fill: #edc655;
+	}
+	50% {
+		fill: #fcffad;
+	}
+	100% {
+		fill: #f76414;
+	}
 }
-
-button:focus {
-    color: var(primary-color-lighter);
+@keyframes color-change {
+	0% {
+		fill: #edc655;
+	}
+	50% {
+		fill: #fcffad;
+	}
+	100% {
+		fill: #f76414;
+	}
 }
-
-button:active {
-    color: var(primary-color-lighter);
+@-webkit-keyframes cloud-move {
+	from {
+		-webkit-transform: translate(0, 50px);
+		        transform: translate(0, 50px);
+	}
+	to {
+		-webkit-transform: translate(200px, 50px);
+		        transform: translate(200px, 50px);
+	}
 }
-
-button:hover {
-    cursor: pointer;
-    opacity: 0.8;
+@keyframes cloud-move {
+	from {
+		-webkit-transform: translate(0, 50px);
+		        transform: translate(0, 50px);
+	}
+	to {
+		-webkit-transform: translate(200px, 50px);
+		        transform: translate(200px, 50px);
+	}
 }
-
-button:focus {
-    cursor: pointer;
-    opacity: 0.8;
+@-webkit-keyframes cloud-move-reverse {
+	from {
+		-webkit-transform: translate(446px, 48px);
+		        transform: translate(446px, 48px);
+	}
+	to {
+		-webkit-transform: translate(100px, 48px);
+		        transform: translate(100px, 48px);
+	}
 }
-
-/* added at Task 1.5, obsolete? */
-button:hover, button:focus {
-cursor: pointer; /* lets the mouse appear as a hand when hovering over the button */
-opacity: 0.8; /* reduces the opacity of the button to 80% */
+@keyframes cloud-move-reverse {
+	from {
+		-webkit-transform: translate(446px, 48px);
+		        transform: translate(446px, 48px);
+	}
+	to {
+		-webkit-transform: translate(100px, 48px);
+		        transform: translate(100px, 48px);
+	}
+}
+.sun {
+	-webkit-animation: 4s color-change infinite alternate linear;
+	        animation: 4s color-change infinite alternate linear;
+}
+.cloud-front {
+	-webkit-animation: 30s cloud-move infinite alternate linear;
+	        animation: 30s cloud-move infinite alternate linear;
+}
+.cloud-back {
+	-webkit-animation: 34s cloud-move-reverse infinite alternate linear;
+	        animation: 34s cloud-move-reverse infinite alternate linear;
+}
+/* berlin.svg that can be removed end */
+@mixin subtitles() {
+  font-weight: 700;
+}
+h2 {
+  @include subtitles();
+  font-size: 20px;
+}
+h3 {
+  @include subtitles();
+  font-size: 18px;
+}
+/*reset font family for buttons*/
+input, texture, select, button {
+font-family: system-ui;
+text-align: center;
 white-space: nowrap; /* aviod the button to line break */
 }
-
+/* This code block is irgnored by the browser and partly not W3C-valid though reguired by CF-tutorial
+button {
+  &:focus {
+    color: var(primary-color-lighter);
+  }
+  &:active {
+    color: var(primary-color-lighter);
+  }
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  &:focus {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  background-color: #FF9900;
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: 0.2s opacity;
+} */
+/* flex-container used for the two buttons on index.html */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #F5F5F5;
+}
+.flex-container > div {
+  background-color: #F5F5F5;
+  width: 300px;
+  margin: 10px;
+  text-align: center;
+  line-height: 50px;
+}
+/* flex-box end */
+/* general button styling */
+/* added at Task 1.5, obsolete? */
+button:hover, button:focus {
+/* lets the mouse appear as a hand when hovering over the button */
+cursor: pointer;
+/* reduces the opacity of the button to 80% */
+opacity: 0.8;
+white-space: nowrap; /* aviod the button to line break */
+}
 .button {
   border: #FF9900 1px solid;
   font-family: inherit;
@@ -421,11 +373,9 @@ white-space: nowrap; /* aviod the button to line break */
   transition: 0.2s opacity;
   white-space: nowrap; /* aviod the button to line break */
 }
-
 .button:hover {
   transition: 0.2s opacity;
 }
-
 .button__secondary {
   border: #FF9900 1px solid;
   background-color:rgba(255,255,255,0.2);
@@ -437,12 +387,10 @@ white-space: nowrap; /* aviod the button to line break */
   transition: 0.2s opacity;
   white-space: nowrap; /* aviod the button to line break */
 }
-
 .button__secondary:hover {
   transition: 0.2s opacity;
 }
 /* general button styling end */
-
 /* used for main footer section */
 .page-footer {
   clear: both;
