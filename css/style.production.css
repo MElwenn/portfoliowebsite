@@ -64,19 +64,24 @@ body {
 a {
   text-decoration: none;
 	color: var(--primary-color);
-	&:visited {
-		color: var(--primary-color-darker);
-	}
-	&:hover {
-		color: var(--secondary-color);
-	}
-	&:focus {
-		color: var(--secondary-color);
-	}
-	&:active {
-		color: var(--secondary-color);
-	}
 }
+
+a:visited {
+	color: var(--primary-color-darker);
+}
+
+a:hover {
+	color: var(--secondary-color);
+}
+
+a:focus {
+	color: var(--secondary-color);
+}
+
+a:active {
+	color: var(--secondary-color);
+}
+
 /* main navigation section within header end */
 
 /* used for general page content */
@@ -154,9 +159,13 @@ th, td {
 	    -ms-flex: 0 1 200px;
 	        flex: 0 1 200px;
 	margin: 10px;
-	&:last-child { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1;
+}
+
+.page-content__item:last-child {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 	text-align: center;
-  }
 }
 
 /* used for contact form on contact.html */
@@ -170,18 +179,6 @@ input[type=text], select, textarea {
   margin-bottom: 16px;
   resize: vertical; /* textarea resizes vertically depending on amount of text */
 }
-
-/* styling submit button contact form */
-button {
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-align: center;
-  white-space: nowrap; /* aviod the button to line break */
-}
-/* contact form end */
 
 /* background color and padding around the form */
 .container {
@@ -226,21 +223,6 @@ button {
 }
 /* Responsive three row grid end */
 
-/* This code block is irgnored by the browser and partly not W3C-valid, though require by CF-Tutorial
-  %button-shared {
-  	border: 2px;
-  	font-family: inherit;
-  	background-color: #FF9900;
-  	color: white;
-  	text-decoration: none;
-  	padding: 10px;
-  	border-radius: 8px;
-  	margin: 10px;
-  	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  }
-  */
-
-
 /* used for the berlin.svg that can be removed after achievement one */
 @-webkit-keyframes "color-change" {
 	0% {
@@ -254,19 +236,18 @@ button {
 	}
 }
 
-@keyframes "color-change" {
-	0% {
-		fill: #edc655;
+@-webkit-keyframes cloud-move {
+	from {
+		-webkit-transform: translate(0, 50px);
+		        transform: translate(0, 50px);
 	}
-	50% {
-		fill: #fcffad;
-	}
-	100% {
-		fill: #f76414;
-	}
+	to {
+		-webkit-transform: translate(200px, 50px);
+		        transform: translate(200px, 50px);
+	} /* Codebeautyfy.org sais "No Error Found,Its Perfect CSS Code" */
 }
 
-@-webkit-keyframes "cloud-move" {
+@keyframes cloud-move {
 	from {
 		-webkit-transform: translate(0, 50px);
 		        transform: translate(0, 50px);
@@ -277,18 +258,7 @@ button {
 	}
 }
 
-@keyframes "cloud-move" {
-	from {
-		-webkit-transform: translate(0, 50px);
-		        transform: translate(0, 50px);
-	}
-	to {
-		-webkit-transform: translate(200px, 50px);
-		        transform: translate(200px, 50px);
-	}
-}
-
-@-webkit-keyframes "cloud-move-reverse" {
+@-webkit-keyframes cloud-move-reverse {
 	from {
 		-webkit-transform: translate(446px, 48px);
 		        transform: translate(446px, 48px);
@@ -296,10 +266,10 @@ button {
 	to {
 		-webkit-transform: translate(100px, 48px);
 		        transform: translate(100px, 48px);
-	}
+	} /* Codebeautyfy.org sais "No Error Found,Its Perfect CSS Code" */
 }
 
-@keyframes "cloud-move-reverse" {
+@keyframes cloud-move-reverse {
 	from {
 		-webkit-transform: translate(446px, 48px);
 		        transform: translate(446px, 48px);
@@ -318,7 +288,7 @@ button {
 .cloud-front {
 	-webkit-animation: 30s cloud-move infinite alternate linear;
 	        animation: 30s cloud-move infinite alternate linear;
-}
+} /* Codebeautyfy.org sais "No Error Found,Its Perfect CSS Code" */
 
 .cloud-back {
 	-webkit-animation: 34s cloud-move-reverse infinite alternate linear;
@@ -346,34 +316,19 @@ font-family: system-ui;
 text-align: center;
 white-space: nowrap; /* aviod the button to line break */
 }
-/* This code block is irgnored by the browser and partly not W3C-valid though reguired by CF-tutorial
-button {
-  &:focus {
-    color: var(primary-color-lighter);
-  }
-  &:active {
-    color: var(primary-color-lighter);
-  }
-  &:hover {
-    cursor: pointer;
-    opacity: 0.8;
-  }
-  &:focus {
-    cursor: pointer;
-    opacity: 0.8;
-  }
-  border: none;
-  display: inline-block;
-  font-family: inherit;
-  background-color: #FF9900;
-  color: white;
-  text-decoration: none;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 3px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
-  transition: 0.2s opacity;
-} */
+/*
+border: none;
+display: inline-block;
+font-family: inherit;
+background-color: #FF9900;
+color: white;
+text-decoration: none;
+margin: 10px;
+padding: 10px;
+border-radius: 3px;
+border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+transition: 0.2s opacity;
+*/
 
 /* flex-container used for the two buttons on index.html */
 
@@ -395,12 +350,59 @@ button {
 
 /* general button styling */
 
+/* styling submit button contact form */
+button {
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap; /* aviod the button to line break */
+}
+/* contact form end */
+
+
+/* This code block is irgnored by the browser and partly not W3C-valid, though require by CF-Tutorial
+  %button-shared {
+  	border: 2px;
+  	font-family: inherit;
+  	background-color: #FF9900;
+  	color: white;
+  	text-decoration: none;
+  	padding: 10px;
+  	border-radius: 8px;
+  	margin: 10px;
+  	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  }
+  */
+
+/* This code block is irgnored by the browser and partly not W3C-valid though reguired by CF-tutorial */
+button {
+}
+
+button:focus {
+    color: var(primary-color-lighter);
+}
+
+button:active {
+    color: var(primary-color-lighter);
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+button:focus {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
 /* added at Task 1.5, obsolete? */
 button:hover, button:focus {
-/* lets the mouse appear as a hand when hovering over the button */
-cursor: pointer;
-/* reduces the opacity of the button to 80% */
-opacity: 0.8;
+cursor: pointer; /* lets the mouse appear as a hand when hovering over the button */
+opacity: 0.8; /* reduces the opacity of the button to 80% */
 white-space: nowrap; /* aviod the button to line break */
 }
 
