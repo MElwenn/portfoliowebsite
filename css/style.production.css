@@ -7,12 +7,12 @@
 */
 /* global color settings */
 :root {
-  --primary-color: #333333;
-  --font-color: #333333;
-  --primary-color-darker: #000000;
-  --primary-color-lighter: #666666;
-  --secondary-color: #FF9900;
-  --base-color: #F5F5F5;
+  --primary-color: #333333; /* dark grey */
+  --font-color: #333333; /* dark grey */
+  --primary-color-darker: #000000; /* black */
+  --primary-color-lighter: #666666; /* lighter grey */
+  --secondary-color: #FF9900; /* orange */
+  --base-color: #F5F5F5; /* almost white */
   width: 100%;
   padding: 20px;
 }
@@ -41,34 +41,52 @@ body {
 	text-align: right;
 }
 /* main header section end */
+/* used for text links in the content section and footer */
+.link {
+  color: var(--font-color); 
+  text-decoration: none;
+}
+/* content section and footer end */
 /* used for main navigation section within header */
 .navigation-list {
+  text-decoration: none;
   list-style-type: none;
 }
 .navigation-list li {
+  text-decoration: none;
   display: inline-block;
   margin-left: 15px;
 }
+.navigation-list__item {
+  color: var(--font-color);
+  text-decoration: none;
+}
 .navigation-list__item--active {
+  color: var(--secondary-color);
   text-decoration: none;
 }
-a {
+/* used for navigation link state
+a.navigation-list {
   text-decoration: none;
-	color: var(--primary-color);
+	color: var(--font-color);
 }
-a:active {
-  color: var(--secondary-color);
+a.navigation-list:active {
+  text-decoration: none;
+  color: var(--font-color);
 }
-a:visited {
-  color: var(--primary-color-darker);
+a.navigation-list:visited {
+  text-decoration: none;
+  color: var(--font-color);
 }
-a:hover {
-  color: var(--secondary-color);
+a.navigation-list__item:hover {
+  text-decoration: none;
+  color: var(--font-color);
 }
-a:focus {
-  color: var(--secondary-color);
+a.navigation-list:focus {
+  text-decoration: none;
+  color: var(--font-color);
 }
-/* main navigation section within header end */
+ main navigation section within header end */
 /* used for general page content */
 .page-content {
 	display: -webkit-box;
@@ -349,6 +367,23 @@ white-space: nowrap; /* aviod the button to line break */
   white-space: nowrap; /* aviod the button to line break */
 }
 
+/* used for navigation link st */
+a.button {
+  text-decoration: none;
+	color: var(--base-color);
+}
+a.button:active {
+  color: var(--base-color);
+}
+a.button:visited {
+  color: var(--base-color);
+}
+a.button:hover {
+  color: var(--base-color);
+}
+a.button:focus {
+  color: var(--base-color);
+}
 /* general button styling end */
 
 /* used for main footer section */
@@ -357,5 +392,6 @@ white-space: nowrap; /* aviod the button to line break */
   display: flex;
   flex-direction: column;
   text-align: center;
+  text-decoration: none;
 }
 /* footer section end */
