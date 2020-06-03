@@ -43,10 +43,16 @@ body {
 /* main header section end */
 /* used for text links in the content section and footer */
 .link {
-  color: var(--font-color); 
+  color: var(--font-color);
   text-decoration: none;
 }
 /* content section and footer end */
+/* used for text links in the grid-boxes on work.htlm */
+.link-visible {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+/* links for grid-boxes on work.htlm end */
 /* used for main navigation section within header */
 .navigation-list {
   text-decoration: none;
@@ -180,7 +186,7 @@ input[type=text], select, textarea {
 }
 /* Responsive three row grid */
 .grid__item {
-  background-color: lightgray;
+  background-color: var(--base-color);
   padding: 10px;
 }
 .grid {
@@ -367,8 +373,8 @@ white-space: nowrap; /* aviod the button to line break */
   white-space: nowrap; /* aviod the button to line break */
 }
 
-/* used for navigation link st */
-a.button {
+/* used for navigation link state
+/* a.button {
   text-decoration: none;
 	color: var(--base-color);
 }
@@ -383,7 +389,7 @@ a.button:hover {
 }
 a.button:focus {
   color: var(--base-color);
-}
+} */
 /* general button styling end */
 
 /* used for main footer section */
