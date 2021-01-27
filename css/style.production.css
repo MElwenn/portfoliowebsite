@@ -75,28 +75,7 @@ body {
   color: var(--secondary-color);
   text-decoration: none;
 }
-/* used for navigation link state
-a.navigation-list {
-  text-decoration: none;
-	color: var(--font-color);
-}
-a.navigation-list:active {
-  text-decoration: none;
-  color: var(--font-color);
-}
-a.navigation-list:visited {
-  text-decoration: none;
-  color: var(--font-color);
-}
-a.navigation-list__item:hover {
-  text-decoration: none;
-  color: var(--font-color);
-}
-a.navigation-list:focus {
-  text-decoration: none;
-  color: var(--font-color);
-}
- main navigation section within header end */
+
 /* used for general page content */
 .page-content {
 	display: -webkit-box;
@@ -108,12 +87,14 @@ a.navigation-list:focus {
 	margin: 0 auto;
   padding: 20px;
 }
-.profile__portrait {
-	float: left;
+.profile__portrait { 
+  float: left;
+  display: grid; /* add css according to grid */
 	width: 200px;
 	margin-right: 40px;
   padding: 35px;
-	border-radius: 50%;
+  border-radius: 50%;
+  grid-template-columns: 1fr 1fr; /* add css according to grid */
 }
 @mixin pagecontent() {
   display: flex;
@@ -136,12 +117,13 @@ a.navigation-list:focus {
 	margin: 10px;
 }
 /* scrollabel document section end */
-/* centered content class used for the project including click-dummy an button on skills.html */
+/* centered content class used for the project including click-dummy an button on projects.html */
 .page-content-centered {
   display: block;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 100%;
   max-width: 200px;
 }
 /* centered content class end */
