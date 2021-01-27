@@ -32,6 +32,10 @@ body {
 /* used for main header section */
 .page-header {
   display: flex;
+  /*position: fixed;
+  text-align: right;
+  top: 0;
+  width: 100%;*/
 }
 .page-header__item {
 	flex: 0 1 200px;
@@ -392,6 +396,27 @@ a.button:focus {
 } */
 /* general button styling end */
 
+/* skill success bars */
+* {box-sizing: border-box}
+
+.success-bars {
+  width: 100%;
+  background-color: #ddd;
+}
+
+.skills {
+  text-align: right;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  color: white;
+}
+
+.req {width: 95%; background-color: #4184F2;}
+.scrum {width: 85%; background-color: #D94436;}
+.popd {width: 80%; background-color: #F4B302;}
+.uxde {width: 65%; background-color: #0E9D59;}
+.code {width: 40%; background-color: #AA46BA;}
+
 /* used for main footer section */
 .page-footer {
   clear: both;
@@ -399,5 +424,6 @@ a.button:focus {
   flex-direction: column;
   text-align: center;
   text-decoration: none;
+  margin: 0px 5px;
 }
 /* footer section end */
