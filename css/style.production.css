@@ -177,7 +177,7 @@ input[type=text], select, textarea {
 .grid__item {
   background-color: var(--base-color);
   padding: 10px;
-  text-align: center;
+  text-align: block;
 }
 .grid {
   display: grid;                      /* fr instead of pixels make the 3-column-grid flexible*/
