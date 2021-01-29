@@ -408,4 +408,8 @@ a.button:focus {
   text-decoration: none;
   margin: 0px 5px;
 }
+
+.bibliography {
+  font-size: 12px;
+}
 /* footer section end */
