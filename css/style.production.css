@@ -178,6 +178,8 @@ input[type=text], select, textarea {
   background-color: var(--base-color);
   padding: 10px;
   text-align: block;
+  display: block;
+  max-width: 90%;
 }
 .grid {
   display: grid;                      /* fr instead of pixels make the 3-column-grid flexible*/
